@@ -8,11 +8,17 @@ public class CameraFreeze : MonoBehaviour
     public float speed = 10f; //How fast camera will chase after followObject
     public Vector2 bordersBL; //negative, bottom and left
     public Vector2 bordersUR; //positive, up and right
+    private Camera cam; //reference to camera
+    private float horizontalOffset; //horizontal offset between camera and edge of viewport
+    private float verticalOffset; //vertical offset between camera and edge of viewport
 
     // Start is called before the first frame update
     void Start()
     {
         Vector2 follow = followObject.transform.position;
+        cam = GetComponent<Camera>();
+        verticalOffset = cam.orthographicSize;
+        horizontalOffset = verticalOffset*2; //since viewport rectangle is twice as wide as it is tall
     }
 
     // Update is called once per frame
@@ -23,8 +29,8 @@ public class CameraFreeze : MonoBehaviour
         Vector3 moveTo = transform.position;
 
         //guarantee target position is within borders
-        moveTo.x = Mathf.Clamp(follow.x, bordersBL.x, bordersUR.x);
-        moveTo.y = Mathf.Clamp(follow.y, bordersBL.y, bordersUR.y);
+        moveTo.x = Mathf.Clamp(follow.x, bordersBL.x+horizontalOffset, bordersUR.x-horizontalOffset);
+        moveTo.y = Mathf.Clamp(follow.y, bordersBL.y+verticalOffset, bordersUR.y-verticalOffset);
         transform.position = Vector3.MoveTowards(transform.position, moveTo, speed * Time.deltaTime);
     }
 
