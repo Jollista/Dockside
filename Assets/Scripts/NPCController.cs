@@ -7,16 +7,6 @@ public class NPCController : MonoBehaviour
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
-    DialogueTrigger dialogueTrigger;
-    void Start()
-    {
-        dialogueTrigger = GetComponent<DialogueTrigger>();
-    }
-    void OnMouseDown()
-    {
-        print("triggering dialogue");
-        dialogueTrigger.TriggerDialogue();
-    }
 
     void OnMouseEnter()
     {
