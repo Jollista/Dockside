@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestNPCDialogue : MonoBehaviour
+public class TestNPCDialogue : NPCDialogue
 {
     //Components for handling dialogue triggering
     [Header ("Generic NPC Dialogue Components")]

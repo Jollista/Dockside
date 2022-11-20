@@ -18,7 +18,13 @@ public class CameraFreeze : MonoBehaviour
         Vector2 follow = followObject.transform.position;
         cam = GetComponent<Camera>();
         verticalOffset = cam.orthographicSize;
-        horizontalOffset = verticalOffset*2; //since viewport rectangle is twice as wide as it is tall
+        horizontalOffset = verticalOffset*10.616f/5; //since viewport rectangle is a little more than twice as wide as it is tall
+        
+        //camera borders are set relative to camera's initial position at scene start
+        bordersBL.x += transform.position.x;
+        bordersBL.y += transform.position.y;
+        bordersUR.x += transform.position.x;
+        bordersUR.y += transform.position.y;
     }
 
     // Update is called once per frame
@@ -38,7 +44,7 @@ public class CameraFreeze : MonoBehaviour
     private void OnDrawGizmos() 
     {
         Gizmos.color = Color.blue;
-        Vector2 pos = new Vector2(transform.position.x+(bordersUR.x+bordersBL.x)/2, transform.position.y+bordersUR.y+bordersBL.y);
+        Vector2 pos = new Vector2(transform.position.x+(bordersUR.x+bordersBL.x)/2, transform.position.y+(bordersUR.y+bordersBL.y)/2);
         Gizmos.DrawWireCube(pos, new Vector3(Mathf.Abs(bordersUR.x) + Mathf.Abs(bordersBL.x), Mathf.Abs(bordersUR.y) + Mathf.Abs(bordersBL.y), 1));
     }
 }
