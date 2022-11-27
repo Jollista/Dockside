@@ -18,7 +18,7 @@ public class CameraFreeze : MonoBehaviour
         Vector2 follow = followObject.transform.position;
         cam = GetComponent<Camera>();
         verticalOffset = cam.orthographicSize;
-        horizontalOffset = verticalOffset*10.616f/5; //since viewport rectangle is a little more than twice as wide as it is tall
+        horizontalOffset = verticalOffset*11f/6; //since viewport rectangle is a little more than twice as wide as it is tall
         
         //camera borders are set relative to camera's initial position at scene start
         bordersBL.x += transform.position.x;

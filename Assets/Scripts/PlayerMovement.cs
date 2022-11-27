@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [Header ("Components")]
     private Rigidbody2D rb;
     private BoxCollider2D boxColl;
+    public Animator animator;
 
     [Header ("Movement Details")]
     public bool canMove = true;
     public float speed = 10f;
+    Vector2 dir;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,14 @@ public class PlayerMovement : MonoBehaviour
         }
         //else
         //Get value of horiz/vert axes
-        float dirX = Input.GetAxis("Horizontal");
-        float dirY = Input.GetAxis("Vertical");
+        dir.x = Input.GetAxis("Horizontal");
+        dir.y = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Horizontal", dir.x);
+        animator.SetFloat("Vertical", dir.y);
+        animator.SetFloat("Speed", dir.sqrMagnitude); //square magnitude is slightly faster than magnitude
            
         //update velocity toward given player input at speed
-        rb.velocity = new Vector2(dirX * speed, dirY * speed);
+        rb.velocity = new Vector2(dir.x * speed, dir.y * speed);
     }
 }

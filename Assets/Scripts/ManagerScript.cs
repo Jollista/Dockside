@@ -5,9 +5,10 @@ using UnityEngine;
 public class ManagerScript : MonoBehaviour
 {
     public static ManagerScript Instance;
-    public int fish1 = 0;
-    public int fish2 = 0;
-    public int fish3 = 0;
+
+    public int mahimahi = 0;
+    public int salmon = 0;
+    public int tilapia = 0;
 
     private void Awake()
     {

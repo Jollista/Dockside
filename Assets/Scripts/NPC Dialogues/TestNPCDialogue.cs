@@ -6,8 +6,9 @@ public class TestNPCDialogue : NPCDialogue
 {
     //Components for handling dialogue triggering
     [Header ("Generic NPC Dialogue Components")]
-    DialogueTrigger dialogueTrigger;
-    PlayerMovement player;
+    DialogueTrigger dialogueTrigger; //reference to this NPC's dialogueTrigger
+    PlayerMovement player; //reference to playermovement script
+    ManagerScript manager; //reference to Game Manager's ManagerScript to check player inventory
 
     //Components for choosing which dialogue triggers
     //Meaning, you can mess with this bit all you like
@@ -21,6 +22,7 @@ public class TestNPCDialogue : NPCDialogue
     {
         dialogueTrigger = GetComponent<DialogueTrigger>();
         player = FindObjectOfType<PlayerMovement>();
+        manager = FindObjectOfType<ManagerScript>();
 
         timesTalkedTo = 0;
         hasMahi = false;
