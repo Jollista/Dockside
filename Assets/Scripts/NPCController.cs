@@ -7,17 +7,25 @@ public class NPCController : MonoBehaviour
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
+
     DialogueTrigger dialogueTrigger;
-    void Start()
+    PlayerMovement player;
+    void Start() 
     {
         dialogueTrigger = GetComponent<DialogueTrigger>();
-    }
-    void OnMouseDown()
-    {
-        print("triggering dialogue");
-        dialogueTrigger.TriggerDialogue();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
+    void OnMouseDown()
+    {
+        //if there is already a dialogue script for this NPC
+        if (GetComponent<NPCDialogue>() != null)
+            return; //return
+        
+        //else
+        if (player.canMove)
+            dialogueTrigger.TriggerDialogue();
+    }
     void OnMouseEnter()
     {
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
