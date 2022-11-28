@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followObject: {fileID: 1577018730}
   speed: 10
-  bordersBL: {x: -12.4, y: -7.08}
+  bordersBL: {x: -12.38, y: -7.08}
   bordersUR: {x: 14.79, y: 11.01}
 --- !u!1 &1577018730 stripped
 GameObject:
