@@ -27,6 +27,13 @@ public class PlayerMovement : MonoBehaviour
         //if can't move, then set velocity to zero and return
         if (!canMove)
         {
+            dir.x = 0;
+            dir.y = 0;
+
+            animator.SetFloat("Horizontal", dir.x);
+            animator.SetFloat("Vertical", dir.y);
+            animator.SetFloat("Speed", dir.sqrMagnitude);
+
             rb.velocity = Vector2.zero;
             return;
         }

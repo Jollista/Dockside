@@ -5,8 +5,8 @@ using UnityEngine;
 public class FishingContiueButtonBehaviour : MonoBehaviour
 {
     public FishingarrowController sliderArrowScript;
-
     public FishCaughtDisplayBehaviour fishCaughtScript;
+    public PlayerMovement movementScript;
 
     public GameObject waterButtons;
     public GameObject fishingDisplay;
@@ -23,5 +23,6 @@ public class FishingContiueButtonBehaviour : MonoBehaviour
         waterButtons.SetActive(true);
         sliderArrowScript.enabled = true;
         fishCaughtScript.enabled = false;
+        movementScript.canMove = true;
     }
 }

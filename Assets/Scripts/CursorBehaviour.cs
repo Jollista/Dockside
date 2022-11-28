@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CursorBehaviour : MonoBehaviour
 {
+    public PlayerMovement movementScript;
+
     public Texture2D cursorDefault;
     public Texture2D cursorWater;
     //public Texture2D cursorNPC;
@@ -38,6 +40,7 @@ public class CursorBehaviour : MonoBehaviour
 
     public void OnClickWater()
     {
+        movementScript.canMove = false;
         Cursor.visible = false;
         waterButtons.SetActive(false);
         fishingSlider.SetActive(true);
