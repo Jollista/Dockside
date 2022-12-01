@@ -13,36 +13,57 @@ public class GordonDialogue : NPCDialogue
     //Components for choosing which dialogue triggers
     //Meaning, you can mess with this bit all you like
     [Header ("Individualized Components")]
-    public int timesTalkedTo;
     public Dialogue ifTalkedToAndNoLeaveForDocks;
     public Dialogue ifTalkedToAndNoTilapia;
     public Dialogue ifTalkedToAndHasTilapia;
+    public Dialogue ifTalkedToMoreThanOnce;
+
     void Start()
     {
         dialogueTrigger = GetComponent<DialogueTrigger>();
         player = FindObjectOfType<PlayerMovement>();
         manager = FindObjectOfType<ManagerScript>();
-
-        timesTalkedTo = 0;
     }
+
     void OnMouseDown()
     {
         //if player can't move (i.e. is in dialogue or something else)
         //don't trigger dialogue
         if (!player.canMove)
             return;
-        
+
         //else
         //this is the area that actually chooses what dialogue triggers
-        if (timesTalkedTo == 0) //default dialogue, what's written in the DialogueTrigger component
+        if (manager.timesTalkedToGordon == 0) //default dialogue, what's written in the DialogueTrigger component
+        { 
+            manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue();
-        else if (manager == null)
+        }
+        else if (manager.hasEnteredDock == false)
+        {
+            manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoLeaveForDocks);
-        else if (timesTalkedTo == 1 && manager.tilapia == 0)
+            goto SkipIncrement;
+        }
+        else if (manager.timesTalkedToGordon == 1 && manager.tilapia == 0)
+        {
+            manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoTilapia);
-        else if (timesTalkedTo == 1 && manager.tilapia == 1)
+            goto SkipIncrement;
+        }
+        else if (manager.timesTalkedToGordon == 1 && manager.tilapia >= 1)
+        {
+            manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToAndHasTilapia);
+        }
+        else
+        {
+            manager.activeSellButton = true;
+            dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
+        }
         
-        timesTalkedTo += 1;
+        manager.timesTalkedToGordon += 1;
+        SkipIncrement:
+            return;
     }
 }
