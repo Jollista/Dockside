@@ -172,26 +172,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Hello, it's nice to meet you! Well, at least I hope it is. I don't actually
-        have any real dialogue written out yet, or even a name.
+      value: Hello, it's nice to meet you. You're the new angler right? Good! I'm
+        glad you're here, we'll need your help with the festival!
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Am I even alive? Do I even exist?
+      value: Sorry for the short notice when we hired you, but we're glad you're
+        here! Feel free to head to the docks west of Taqueria Tropical to start fishing!
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: 'I don''t know. I was hoping that you could at least tell me what either
-        of those things are, but there''s not a system implemented for you to respond
-        in dialogue yet. '
+      value: Oh and before I forget- I know you're probably a well accomplished fisher
+        and all, but we have this speech we're required to read to all the new hires...
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Damn time constraints.
+      value: Uh... we can speed through it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: Let's see... "head to the docks, west... click on the water to fish...
+        talk to us to sell..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: Yada yada. That's the gist. Anyways, good luck! I believe in you! Go
+        catch me some salmon!
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358694, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: m_FlipX
@@ -265,7 +275,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4186537850821398109, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
 --- !u!1001 &166829578
 PrefabInstance:
@@ -420,34 +431,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4186537850821398109, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
 --- !u!1 &166829579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8107357991913358691, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_PrefabInstance: {fileID: 166829578}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &166829580
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166829579}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &166829586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +451,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e35d1523e9276f4e94581413dfc71d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: e75c857552bbd5240869279eded621b7, type: 3}
+  - {fileID: 8300000, guid: a65f9fddf7a764b4b9fda734ed060a1e, type: 3}
+  - {fileID: 8300000, guid: 10e01dcf465efb846a634b7bc209983f, type: 3}
+  - {fileID: 8300000, guid: 238949b88f6042d498e61529f4719eb9, type: 3}
+  - {fileID: 8300000, guid: f303adb23d1f8224b855419a0427180c, type: 3}
+  - {fileID: 8300000, guid: a55f4821aa8345946bd9d3b400a359fb, type: 3}
   ifTalkedToAndNoLeaveForDocks:
     name: Gordon
     sentences:
@@ -492,10 +490,11 @@ MonoBehaviour:
   ifSoldAllTilapia:
     name: Gordon
     sentences:
-    - I'm bad at writing dialogue.
-    - But maybe he says something like...
-    - '"You''re wasting time, I already have all my fish!...'
-    - ...Go help the others prepare for the festival!"
+    - Hm?
+    - What are you donig here?!
+    - You're wasting time, I already have all the fish I need for the festival!
+    - Well don't just stand there, you muffinhead! Get to it!
+    - '[As if by instinct you respond "Yes, Chef!"]'
 --- !u!1 &226175489
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,12 +595,44 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1854016384}
     - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1723268486}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayNextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: playSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonSFX, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679952451859245, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4974679953184588358, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
       propertyPath: m_FontData.m_Font
@@ -1301,21 +1332,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: Whoever wrote this placeholder dialogue put at least marginally more
-        effort into Gordon's over there than mine. I've only got this one line. Pretty
-        lame if you ask me.
+      value: Hey! Nice to meet you! You're the fisher we hired right?
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Damn time constraints.
+      value: Fantastic! I'll need you to catch me about 20 Mahi-Mahi to make enough
+        fish tacos for the festival.
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: Damn time constraints.
+      value: Docks are just west. Make sure to catch a bunch!
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358692, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
@@ -1339,7 +1369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358695, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8107357991913358695, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
       propertyPath: m_LocalScale.x
@@ -1393,34 +1423,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4186537850821398109, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
 --- !u!1 &483728303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8107357991913358691, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_PrefabInstance: {fileID: 483728302}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &483728304
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483728303}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &483728310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,6 +1443,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822cca50db6e66f489c73c8da56be503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: da429d73d60513543827ad3787f2656c, type: 3}
+  - {fileID: 8300000, guid: 80413e8ea8a5a584ab3fde24ca1994af, type: 3}
+  - {fileID: 8300000, guid: 9fc592fafa081e147b634e9e4cb9482e, type: 3}
+  - {fileID: 8300000, guid: 6ddf20774ae0d994498eda3378136f50, type: 3}
+  - {fileID: 8300000, guid: 342c172e00a55274e894966ebaf6b232, type: 3}
+  - {fileID: 8300000, guid: b693d0c73e377b545856703a588ee116, type: 3}
   ifTalkedToAndNoLeaveForDocks:
     name: Taqueria Lady
     sentences:
@@ -1575,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2028,32 +2045,74 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 725186425275782567, guid: 5704d3adb2a0b5244921ec3cbc6b7bcc, type: 3}
   m_PrefabInstance: {fileID: 1802311913}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1723268486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1862723752411155263, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+  m_PrefabInstance: {fileID: 289337115}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81885575fe15964e8a53e833b2d6750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740310549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8107357991913358691, guid: 3fc13be22e668ad4c98178a340bc66a7, type: 3}
   m_PrefabInstance: {fileID: 95050983}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &1740310555
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &1740310557
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740310549}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0751cf1a66a4591468c4e1e3a87ea920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 76f3c325e498ad747bd8a336086dcb53, type: 3}
+  - {fileID: 8300000, guid: 088cc63f577e5ba4c8df983a90ff2072, type: 3}
+  - {fileID: 8300000, guid: 8aca464e391ad004ab92c6db6aa07917, type: 3}
+  - {fileID: 8300000, guid: 1076f252005d47a498208cda422b2dcb, type: 3}
+  ifTalkedToAndNoLeaveForDocks:
+    name: Sushi Chef ;)
+    sentences:
+    - Hm? Did you get lost? Or were you just so enchanted by my dashing good looks
+      you couldn't get away~?
+    - Ah I'm just kidding. The docks are to the west! You also might want to talk
+      to the others. I'm after salmon, but they might be after a different kind of
+      fish.
+  ifTalkedToAndNoSalmon:
+    name: Sushi Chef
+    sentences:
+    - Didn't catch any salmon? Ah that's a shame. Ah well, there's still time. No
+      rush. Just make sure to take it easy.
+  ifTalkedToAndHasSalmon:
+    name: Sushi Chef
+    sentences:
+    - Woah! Hey hey hey! Look at that! I can make some really nice sushi with that
+      salmon of yours. Care to trade?
+  ifTalkedToMoreThanOnce:
+    name: Sushi Chef
+    sentences:
+    - Hey! Just wanted to say you're doing great! I know the others can be a bit
+      terse sometimes but I know they feel the same. We all appreciate all the work
+      you're doing.
+    - I mean, hey, you've already caught a decent amount of fish for me! So thank
+      you. This festival's gonna be incredible thanks to you.
+  ifSoldAllSalmon:
+    name: Sushi Chef! :D
+    sentences:
+    - Heyyyyy! There's my favorite angler~
+    - I'd love to buy some more fish from ya, but you've already sold me plenty.
+      I'll definitely have enough for the festival now thanks to you.
+    - You should go help the others if you haven't already, I'm sure they'd appreciate
+      it.
+    - See you at the festival~
 --- !u!1 &1786481418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2554,18 @@ PrefabInstance:
       propertyPath: mahimahiSprite
       value: 
       objectReference: {fileID: 255462516, guid: 9c4c2e53a7860d94dba99796a37c7ba8, type: 3}
+    - target: {fileID: 4572507782705264056, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572507782705264056, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
+      propertyPath: sounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0dec42efc62ed8848a92770f24ad4841, type: 3}
+    - target: {fileID: 4572507782705264056, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
+      propertyPath: sounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: be4dcd46d71555b44bbde45aa2f760f5, type: 3}
     - target: {fileID: 4572507782705264057, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
       propertyPath: m_RootOrder
       value: 0

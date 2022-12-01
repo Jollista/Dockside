@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TaqueriaDialogue : NPCDialogue
+public class SushiDialogue : NPCDialogue
 {
-    [Header("Generic NPC Dialogue Components")]
+    //Components for handling dialogue triggering
+    [Header ("Generic NPC Dialogue Components")]
     DialogueTrigger dialogueTrigger; //reference to this NPC's dialogueTrigger
     PlayerMovement player; //reference to playermovement script
     ManagerScript manager; //reference to Game Manager's ManagerScript to check player inventory
@@ -13,12 +14,12 @@ public class TaqueriaDialogue : NPCDialogue
 
     //Components for choosing which dialogue triggers
     //Meaning, you can mess with this bit all you like
-    [Header("Individualized Components")]
+    [Header ("Individualized Components")]
     public Dialogue ifTalkedToAndNoLeaveForDocks;
-    public Dialogue ifTalkedToAndNoMahimahi;
-    public Dialogue ifTalkedToAndHasMahimahi;
+    public Dialogue ifTalkedToAndNoSalmon;
+    public Dialogue ifTalkedToAndHasSalmon;
     public Dialogue ifTalkedToMoreThanOnce;
-    public Dialogue ifSoldAllMahimahi;
+    public Dialogue ifSoldAllSalmon;
 
     void Start()
     {
@@ -40,8 +41,8 @@ public class TaqueriaDialogue : NPCDialogue
         audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
 
         //this is the area that actually chooses what dialogue triggers
-        if (manager.timesTalkedToTaqueriaChef == 0) //default dialogue, what's written in the DialogueTrigger component
-        {
+        if (manager.timeTalkedToSushiChef == 0) //default dialogue, what's written in the DialogueTrigger component
+        { 
             manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue();
         }
@@ -51,18 +52,18 @@ public class TaqueriaDialogue : NPCDialogue
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoLeaveForDocks);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToTaqueriaChef == 1 && manager.mahimahi == 0 && manager.mahimahiSold == 0)
+        else if (manager.timeTalkedToSushiChef == 1 && manager.salmon == 0 && manager.salmonSold == 0)
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoMahimahi);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoSalmon);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToTaqueriaChef == 1 && manager.mahimahi >= 1)
+        else if (manager.timeTalkedToSushiChef == 1 && manager.salmon >= 1)
         {
             manager.activeSellButton = true;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasMahimahi);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasSalmon);
         }
-        else if (manager.mahimahiSold < 20)
+        else if (manager.salmonSold < 20)
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
@@ -70,11 +71,10 @@ public class TaqueriaDialogue : NPCDialogue
         else
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifSoldAllMahimahi);
+            dialogueTrigger.TriggerDialogue(ifSoldAllSalmon);
         }
-
-        manager.timesTalkedToTaqueriaChef += 1;
-
+        
+        manager.timeTalkedToSushiChef += 1;
         SkipIncrement:
             return;
     }

@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences; //queue of sentences in the dialogue
     private PlayerMovement player;
     private ManagerScript gameManager;
+    private AudioSource audioSource;
+    public AudioClip[] sounds;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         player = FindObjectOfType<PlayerMovement>();
         gameManager = FindObjectOfType<ManagerScript>();
+        audioSource = FindObjectOfType<AudioSource>();
     }
 
     public void StartDialogue (Dialogue dialogue)
@@ -54,6 +57,9 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence ()
     {
+        //play click sound effect
+        //audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length-1)]);
+
         //check if queue is empty
         if (sentences.Count == 0)
         {
@@ -66,7 +72,8 @@ public class DialogueManager : MonoBehaviour
             sellButton.SetActive(true);
         }
 
-        //else, get next sentence
+        //else
+        //get next sentence
         string sentence = sentences.Dequeue();
         StopAllCoroutines(); //ensure previous sentence is finished animating
         StartCoroutine(TypeSentence(sentence)); //animate sentence
@@ -79,6 +86,9 @@ public class DialogueManager : MonoBehaviour
         player.canMove = false;
 
         animatorSell.SetBool("IsOpen", true);
+        
+        //play click sound effect
+        //audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length-1)]);
 
         switch (nameText.text)
         {

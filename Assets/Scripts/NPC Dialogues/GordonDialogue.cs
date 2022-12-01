@@ -9,6 +9,8 @@ public class GordonDialogue : NPCDialogue
     DialogueTrigger dialogueTrigger; //reference to this NPC's dialogueTrigger
     PlayerMovement player; //reference to playermovement script
     ManagerScript manager; //reference to Game Manager's ManagerScript to check player inventory
+    AudioSource audioSource; //AudioSource to play sounds
+    public AudioClip[] sounds; //sounds to be played on dialogue start
 
     //Components for choosing which dialogue triggers
     //Meaning, you can mess with this bit all you like
@@ -24,6 +26,7 @@ public class GordonDialogue : NPCDialogue
         dialogueTrigger = GetComponent<DialogueTrigger>();
         player = FindObjectOfType<PlayerMovement>();
         manager = FindObjectOfType<ManagerScript>();
+        audioSource = FindObjectOfType<AudioSource>();
     }
 
     void OnMouseDown()
@@ -34,6 +37,9 @@ public class GordonDialogue : NPCDialogue
             return;
 
         //else
+        //play random voice clip
+        audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
+
         //this is the area that actually chooses what dialogue triggers
         if (manager.timesTalkedToGordon == 0) //default dialogue, what's written in the DialogueTrigger component
         { 
@@ -46,7 +52,7 @@ public class GordonDialogue : NPCDialogue
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoLeaveForDocks);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToGordon == 1 && manager.tilapia == 0)
+        else if (manager.timesTalkedToGordon == 1 && manager.tilapia == 0 && manager.tilapiaSold == 0)
         {
             manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoTilapia);
