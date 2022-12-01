@@ -567,6 +567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2080536088148122338, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4974679952250032233, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -591,6 +595,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 9766f51f941c32c4c83bc14f414130ab, type: 3}
+    - target: {fileID: 4974679953184588358, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4974679953184588358, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 4974679953191174569, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
@@ -1398,6 +1410,44 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &483728310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483728303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822cca50db6e66f489c73c8da56be503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ifTalkedToAndNoLeaveForDocks:
+    name: Taqueria Lady
+    sentences:
+    - You just talked to me but didnt even go to the docks to the west...
+    - Rude.
+    - Please bring Mahi-Mahi.
+  ifTalkedToAndNoMahimahi:
+    name: Taqueria Lady
+    sentences:
+    - Let me get this straight... you went to the docks but didn't catch any Mahi-Mahi?
+    - Are you as good of a fisher as you say you are?
+  ifTalkedToAndHasMahimahi:
+    name: Taqueria Lady
+    sentences:
+    - Woah! What a catch!
+    - With how long you were gone I thought the fish caught you!
+    - Keep bringing some like this and I'll be ready in no time!
+  ifTalkedToMoreThanOnce:
+    name: Taqueria Lady
+    sentences:
+    - More Mahi-Mahi to sell? I'm so close to having 20!
+  ifSoldAllMahimahi:
+    name: Taqueria Lady
+    sentences:
+    - Thanks for all your hard work, but I'm all ready now!
+    - Maybe help the others prepare?
 --- !u!1 &579097684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,9 +1986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f64ac05761a3914db3b9fc7dc33326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mahimahi: 0
-  salmon: 0
-  tilapia: 21
+  mahimahi: 20
+  salmon: 20
+  tilapia: 20
   mahimahiSold: 0
   salmonSold: 0
   tilapiaSold: 0
