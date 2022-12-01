@@ -489,6 +489,13 @@ MonoBehaviour:
     name: Gordon
     sentences:
     - Came back with more tilapia I hope...
+  ifSoldAllTilapia:
+    name: Gordon
+    sentences:
+    - I'm bad at writing dialogue.
+    - But maybe he says something like...
+    - '"You''re wasting time, I already have all my fish!...'
+    - ...Go help the others prepare for the festival!"
 --- !u!1 &226175489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,7 +1938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mahimahi: 0
   salmon: 0
-  tilapia: 0
+  tilapia: 21
   mahimahiSold: 0
   salmonSold: 0
   tilapiaSold: 0
