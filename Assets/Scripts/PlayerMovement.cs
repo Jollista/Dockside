@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Speed", dir.sqrMagnitude);
 
             rb.velocity = Vector2.zero;
+
+
             return;
         }
         //else
@@ -48,5 +50,18 @@ public class PlayerMovement : MonoBehaviour
            
         //update velocity toward given player input at speed
         rb.velocity = new Vector2(dir.x * speed, dir.y * speed);
+
+
+
+        // start audio source(walking FX) if moving
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+            {
+            GetComponent<AudioSource>().UnPause();
+        }
+        else
+        {
+            //stop audio source(walking FX) if not moving
+            GetComponent<AudioSource>().Pause();
+        }
     }
 }
