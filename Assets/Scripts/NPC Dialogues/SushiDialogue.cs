@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GordonDialogue : NPCDialogue
+public class SushiDialogue : NPCDialogue
 {
     //Components for handling dialogue triggering
     [Header ("Generic NPC Dialogue Components")]
@@ -16,10 +16,10 @@ public class GordonDialogue : NPCDialogue
     //Meaning, you can mess with this bit all you like
     [Header ("Individualized Components")]
     public Dialogue ifTalkedToAndNoLeaveForDocks;
-    public Dialogue ifTalkedToAndNoTilapia;
-    public Dialogue ifTalkedToAndHasTilapia;
+    public Dialogue ifTalkedToAndNoSalmon;
+    public Dialogue ifTalkedToAndHasSalmon;
     public Dialogue ifTalkedToMoreThanOnce;
-    public Dialogue ifSoldAllTilapia;
+    public Dialogue ifSoldAllSalmon;
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class GordonDialogue : NPCDialogue
         audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
 
         //this is the area that actually chooses what dialogue triggers
-        if (manager.timesTalkedToGordon == 0) //default dialogue, what's written in the DialogueTrigger component
+        if (manager.timeTalkedToSushiChef == 0) //default dialogue, what's written in the DialogueTrigger component
         { 
             manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue();
@@ -52,18 +52,18 @@ public class GordonDialogue : NPCDialogue
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoLeaveForDocks);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToGordon == 1 && manager.tilapia == 0 && manager.tilapiaSold == 0)
+        else if (manager.timeTalkedToSushiChef == 1 && manager.salmon == 0 && manager.salmonSold == 0)
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoTilapia);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoSalmon);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToGordon == 1 && manager.tilapia >= 1)
+        else if (manager.timeTalkedToSushiChef == 1 && manager.salmon >= 1)
         {
             manager.activeSellButton = true;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasTilapia);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasSalmon);
         }
-        else if (manager.tilapiaSold < 20)
+        else if (manager.salmonSold < 20)
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
@@ -71,10 +71,10 @@ public class GordonDialogue : NPCDialogue
         else
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifSoldAllTilapia);
+            dialogueTrigger.TriggerDialogue(ifSoldAllSalmon);
         }
         
-        manager.timesTalkedToGordon += 1;
+        manager.timeTalkedToSushiChef += 1;
         SkipIncrement:
             return;
     }

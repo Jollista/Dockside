@@ -23,7 +23,9 @@ public class SceneManagerScript : MonoBehaviour
     {
         gameManagerObject = GameObject.Find("GameManager");
         gameManager = gameManagerObject.GetComponent<ManagerScript>();
+        gameManager.hasEnteredDock = true;
     }
+
     public void catchSuccess(string successColor)
     {
         success = Random.Range(0, 101);

@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GordonDialogue : NPCDialogue
+public class TaqueriaDialogue : NPCDialogue
 {
-    //Components for handling dialogue triggering
-    [Header ("Generic NPC Dialogue Components")]
+    [Header("Generic NPC Dialogue Components")]
     DialogueTrigger dialogueTrigger; //reference to this NPC's dialogueTrigger
     PlayerMovement player; //reference to playermovement script
     ManagerScript manager; //reference to Game Manager's ManagerScript to check player inventory
@@ -14,12 +13,12 @@ public class GordonDialogue : NPCDialogue
 
     //Components for choosing which dialogue triggers
     //Meaning, you can mess with this bit all you like
-    [Header ("Individualized Components")]
+    [Header("Individualized Components")]
     public Dialogue ifTalkedToAndNoLeaveForDocks;
-    public Dialogue ifTalkedToAndNoTilapia;
-    public Dialogue ifTalkedToAndHasTilapia;
+    public Dialogue ifTalkedToAndNoMahimahi;
+    public Dialogue ifTalkedToAndHasMahimahi;
     public Dialogue ifTalkedToMoreThanOnce;
-    public Dialogue ifSoldAllTilapia;
+    public Dialogue ifSoldAllMahimahi;
 
     void Start()
     {
@@ -41,8 +40,8 @@ public class GordonDialogue : NPCDialogue
         audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)]);
 
         //this is the area that actually chooses what dialogue triggers
-        if (manager.timesTalkedToGordon == 0) //default dialogue, what's written in the DialogueTrigger component
-        { 
+        if (manager.timesTalkedToTaqueriaChef == 0) //default dialogue, what's written in the DialogueTrigger component
+        {
             manager.activeSellButton = false;
             dialogueTrigger.TriggerDialogue();
         }
@@ -52,18 +51,18 @@ public class GordonDialogue : NPCDialogue
             dialogueTrigger.TriggerDialogue(ifTalkedToAndNoLeaveForDocks);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToGordon == 1 && manager.tilapia == 0 && manager.tilapiaSold == 0)
+        else if (manager.timesTalkedToTaqueriaChef == 1 && manager.mahimahi == 0 && manager.mahimahiSold == 0)
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoTilapia);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndNoMahimahi);
             goto SkipIncrement;
         }
-        else if (manager.timesTalkedToGordon == 1 && manager.tilapia >= 1)
+        else if (manager.timesTalkedToTaqueriaChef == 1 && manager.mahimahi >= 1)
         {
             manager.activeSellButton = true;
-            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasTilapia);
+            dialogueTrigger.TriggerDialogue(ifTalkedToAndHasMahimahi);
         }
-        else if (manager.tilapiaSold < 20)
+        else if (manager.mahimahiSold < 20)
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
@@ -71,10 +70,11 @@ public class GordonDialogue : NPCDialogue
         else
         {
             manager.activeSellButton = false;
-            dialogueTrigger.TriggerDialogue(ifSoldAllTilapia);
+            dialogueTrigger.TriggerDialogue(ifSoldAllMahimahi);
         }
-        
-        manager.timesTalkedToGordon += 1;
+
+        manager.timesTalkedToTaqueriaChef += 1;
+
         SkipIncrement:
             return;
     }
