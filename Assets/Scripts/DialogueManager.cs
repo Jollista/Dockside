@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public Sprite salmonSprite;
 
     public GameObject sellButton;
+    public GameObject festivalTransition;
 
     public Animator animator; //reference to animator to handle dialogue box animation
     public Animator animatorSell; //reference to animator to handle sell menu animation
@@ -113,7 +114,6 @@ public class DialogueManager : MonoBehaviour
                 fishOwnedText.text = "Owned: " + gameManager.salmon.ToString();
                 break;
         }
-
     }
 
     //animate sentence by adding one letter at a time
@@ -177,6 +177,11 @@ public class DialogueManager : MonoBehaviour
     public void CloseSellSceen()
     {
         animatorSell.SetBool("IsOpen", false);
+
+        if (gameManager.gameComplete)
+        {
+            festivalTransition.SetActive(true);
+        }
 
         player.canMove = true;
     }

@@ -20,6 +20,7 @@ public class SushiDialogue : NPCDialogue
     public Dialogue ifTalkedToAndHasSalmon;
     public Dialogue ifTalkedToMoreThanOnce;
     public Dialogue ifSoldAllSalmon;
+    public Dialogue ifGameComplete;
 
     void Start()
     {
@@ -67,6 +68,11 @@ public class SushiDialogue : NPCDialogue
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
+        }
+        else if (manager.gameComplete)
+        {
+            manager.activeSellButton = false;
+            dialogueTrigger.TriggerDialogue(ifGameComplete);
         }
         else
         {

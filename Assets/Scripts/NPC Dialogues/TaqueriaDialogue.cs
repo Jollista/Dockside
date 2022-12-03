@@ -19,6 +19,7 @@ public class TaqueriaDialogue : NPCDialogue
     public Dialogue ifTalkedToAndHasMahimahi;
     public Dialogue ifTalkedToMoreThanOnce;
     public Dialogue ifSoldAllMahimahi;
+    public Dialogue ifGameComplete;
 
     void Start()
     {
@@ -66,6 +67,11 @@ public class TaqueriaDialogue : NPCDialogue
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
+        }
+        else if (manager.gameComplete)
+        {
+            manager.activeSellButton = false;
+            dialogueTrigger.TriggerDialogue(ifGameComplete);
         }
         else
         {

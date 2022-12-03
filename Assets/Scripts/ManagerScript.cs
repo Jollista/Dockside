@@ -14,6 +14,7 @@ public class ManagerScript : MonoBehaviour
     public int tilapiaSold = 0;
 
     public bool activeSellButton = false;
+    public bool gameComplete = false;
 
     public int timesTalkedToGordon = 0;
     public int timesTalkedToTaqueriaChef = 0;
@@ -31,5 +32,13 @@ public class ManagerScript : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if(mahimahiSold >= 20 && salmonSold >= 20 && tilapiaSold >= 20)
+        {
+            gameComplete = true;
+        }
     }
 }

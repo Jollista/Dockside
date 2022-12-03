@@ -20,6 +20,7 @@ public class GordonDialogue : NPCDialogue
     public Dialogue ifTalkedToAndHasTilapia;
     public Dialogue ifTalkedToMoreThanOnce;
     public Dialogue ifSoldAllTilapia;
+    public Dialogue ifGameComplete;
 
     void Start()
     {
@@ -67,6 +68,11 @@ public class GordonDialogue : NPCDialogue
         {
             manager.activeSellButton = true;
             dialogueTrigger.TriggerDialogue(ifTalkedToMoreThanOnce);
+        }
+        else if (manager.gameComplete)
+        {
+            manager.activeSellButton = false;
+            dialogueTrigger.TriggerDialogue(ifGameComplete);
         }
         else
         {

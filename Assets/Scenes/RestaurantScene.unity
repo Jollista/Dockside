@@ -495,6 +495,12 @@ MonoBehaviour:
     - You're wasting time, I already have all the fish I need for the festival!
     - Well don't just stand there, you muffinhead! Get to it!
     - '[As if by instinct you respond "Yes, Chef!"]'
+  ifGameComplete:
+    name: Gordon
+    sentences:
+    - Splendid... I trust you got everyone their fish?
+    - I can tell because their "restaraunts" smell like a dog soaked in gasoline.
+    - Meet us at the festival to the east and watch me out-sell these donkeys.
 --- !u!1 &226175489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1506,12 @@ MonoBehaviour:
     sentences:
     - Thanks for all your hard work, but I'm all ready now!
     - Maybe help the others prepare?
+  ifGameComplete:
+    name: Taqueria Lady
+    sentences:
+    - Smell that? Everyone is cooking!
+    - I look forward to this festival every year.. I just cant wait!
+    - I hope you'll join us. The festival is just over there to the east.
 --- !u!1 &579097684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1615,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &601451224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2317246511819092481, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+  m_PrefabInstance: {fileID: 1673000459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &758349708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2038,13 +2055,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f64ac05761a3914db3b9fc7dc33326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mahimahi: 0
-  salmon: 0
-  tilapia: 0
+  mahimahi: 20
+  salmon: 20
+  tilapia: 20
   mahimahiSold: 0
   salmonSold: 0
   tilapiaSold: 0
   activeSellButton: 0
+  gameComplete: 0
   timesTalkedToGordon: 0
   timesTalkedToTaqueriaChef: 0
   timeTalkedToSushiChef: 0
@@ -2069,6 +2087,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 725186425275782567, guid: 5704d3adb2a0b5244921ec3cbc6b7bcc, type: 3}
   m_PrefabInstance: {fileID: 1802311913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1673000459
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2317246511819092481, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_Name
+      value: Festival Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317246511819092481, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.040644
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6363637211272540385, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937657637448876236, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
+      propertyPath: sceneToLoad
+      value: FestivalScene
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a33086b67fa2d346b295a675cf2e284, type: 3}
 --- !u!114 &1723268486 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1862723752411155263, guid: 6162a58004e8bc74089a0a89377f4297, type: 3}
@@ -2137,6 +2220,10 @@ MonoBehaviour:
     - You should go help the others if you haven't already, I'm sure they'd appreciate
       it.
     - See you at the festival~
+  ifGameComplete:
+    name: Sushi Chef :D
+    sentences:
+    - Looks like everyone is ready to go, meet us at the festival to the east!
 --- !u!1 &1786481418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2669,10 @@ PrefabInstance:
       propertyPath: sounds.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4572507782705264056, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
+      propertyPath: festivalTransition
+      value: 
+      objectReference: {fileID: 601451224}
     - target: {fileID: 4572507782705264056, guid: ae9fb9080a293154db64612f38529dd4, type: 3}
       propertyPath: sounds.Array.data[0]
       value: 
