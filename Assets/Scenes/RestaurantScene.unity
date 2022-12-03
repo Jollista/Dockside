@@ -2055,9 +2055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f64ac05761a3914db3b9fc7dc33326e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mahimahi: 20
-  salmon: 20
-  tilapia: 20
+  mahimahi: 0
+  salmon: 0
+  tilapia: 0
   mahimahiSold: 0
   salmonSold: 0
   tilapiaSold: 0
