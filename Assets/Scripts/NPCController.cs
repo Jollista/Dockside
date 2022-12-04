@@ -1,3 +1,14 @@
+/*** 
+*file: SceneTransition.cs 
+*Members: Juniper Watson
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/20/2022 
+* 
+*purpose: This scripts controls the NPC behavior, ensuring the cursor changes
+*to indicate that the player can speak to the NPC, and triggers dialogue when clicked. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
