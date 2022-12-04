@@ -1,3 +1,14 @@
+/*** 
+*file: FishCaughtDisplayBehaviour.cs 
+*Members: Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/27/2022 
+* 
+*purpose: This script handles displaying the popup menu that displays what the player caught
+*from a fishing attempt. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
