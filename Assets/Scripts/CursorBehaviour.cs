@@ -1,3 +1,14 @@
+/*** 
+*file: SceneTransition.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/4/2022 
+* 
+*purpose: This scripts handles cursor behavior, notably the appearance when 
+*hovered over interactables and playing sound effects with certain actions. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
