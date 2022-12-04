@@ -1,3 +1,14 @@
+/*** 
+*file: FishingarrowController.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/3/2022 
+* 
+*purpose: This script controls the arrow that slides back and forth during the  
+*fishing interaction. It also determines what "color" the slider lands on when 
+*player reels in.
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
