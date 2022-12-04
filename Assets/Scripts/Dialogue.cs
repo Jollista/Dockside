@@ -1,5 +1,5 @@
 /*** 
-*file: SceneTransition.cs 
+*file: Dialogue.cs 
 *Members: Juniper Watson
 *class: CS 4700 – Game Development 
 *assignment: program 4
