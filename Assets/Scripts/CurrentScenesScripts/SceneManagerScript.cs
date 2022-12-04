@@ -1,3 +1,14 @@
+/*** 
+*file: SceneManagerScript.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/30/2022 
+* 
+*purpose: When fishing, this script determines the chances of 
+*successfully reeling a fish in and all associated changes in the inventory.
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
