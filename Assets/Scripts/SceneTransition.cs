@@ -1,6 +1,6 @@
 /*** 
 *file: SceneTransition.cs 
-*Members: Tony Diaz
+*Members: Juniper Watson
 *class: CS 4700 – Game Development 
 *assignment: program 4
 *date last modified: 11/20/2022 
