@@ -1,5 +1,5 @@
 /*** 
-*file: SceneTransition.cs 
+*file: MainMenuButtons.cs 
 *Members: Andrew Sanford
 *class: CS 4700 – Game Development 
 *assignment: program 4
