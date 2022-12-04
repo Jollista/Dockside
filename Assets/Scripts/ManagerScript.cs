@@ -1,3 +1,14 @@
+/*** 
+*file: SceneTransition.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/3/2022 
+* 
+*purpose: This scripts holds the player's inventory, tracks their progress, 
+*tracks flags of the current game state, tracks how many times they've spoken to 
+*an NPC, and retains all that data between scenes.
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
