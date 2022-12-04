@@ -1,3 +1,14 @@
+/*** 
+*file: TestNPCDialogue.cs 
+*Members: Juniper Watson
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/27/2022 
+* 
+*purpose: This script is a test script to see how the dialogue system is doing.
+*Also tests how conditional dialogue performs.
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
