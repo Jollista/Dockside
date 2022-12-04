@@ -1,3 +1,14 @@
+/*** 
+*file: SceneTransition.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/4/2022 
+* 
+*purpose: This scripts manages the dialogue, including what dialogue shows up
+*in the dialogue box and what sounds play during dialogue. Also takes care of
+*the sell menu.
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
