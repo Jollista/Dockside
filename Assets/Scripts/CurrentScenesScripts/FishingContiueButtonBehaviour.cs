@@ -1,3 +1,14 @@
+/*** 
+*file: FishingContiueButtonBehaviour.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/28/2022 
+* 
+*purpose: This scripts handles reseting the popup caught fish menu when the player
+*clicks continue to close it. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
