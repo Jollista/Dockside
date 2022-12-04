@@ -1,3 +1,14 @@
+/*** 
+*file: CameraForceAspectRatio.cs 
+*Members: Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/28/2022 
+* 
+*purpose: This script forces the perspective of the game to a 16:9 ratio. 
+*If the resolution is not 16:9, black bars are added to 'trim' off extra. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
