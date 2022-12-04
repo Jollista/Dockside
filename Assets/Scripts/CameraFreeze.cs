@@ -1,3 +1,14 @@
+/*** 
+*file: CameraFreeze.cs 
+*Members: Juniper Watson
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/27/2022 
+* 
+*purpose: This scripts loads another scene when the player collides with the 
+*appropriate collision box. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
