@@ -1,3 +1,14 @@
+/*** 
+*file: PlayerMovement.cs 
+*Members: Juniper Watson, Andrew Sanford, Marty Scott
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/1/2022 
+* 
+*purpose: This scripts allows the player to control the player sprite's movement, 
+*and ensures proper animations and sound effects are played while walking. 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
