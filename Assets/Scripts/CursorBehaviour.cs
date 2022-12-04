@@ -12,6 +12,7 @@ public class CursorBehaviour : MonoBehaviour
 
     public GameObject fishingSlider;
     public GameObject waterButtons;
+    public AudioSource sound;
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class CursorBehaviour : MonoBehaviour
 
     public void OnClickWater()
     {
+        sound.Play();
         movementScript.canMove = false;
         Cursor.visible = false;
         waterButtons.SetActive(false);

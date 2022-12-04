@@ -10,6 +10,7 @@ public class FishingarrowController : MonoBehaviour
     public FishingarrowController thisScript;
     public string sliderColor = "";
     public RectTransform sliderRectTransform;
+    public AudioSource sound;
 
     private bool goLeft = false;
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class FishingarrowController : MonoBehaviour
 
     void stopSlider()
     {
+        sound.Play();
         Cursor.SetCursor(cursorDefault, Vector2.zero, CursorMode.Auto);
         Cursor.visible = true;
         managerScript.catchSuccess(sliderColor);
