@@ -1,5 +1,5 @@
 /*** 
-*file: SceneTransition.cs 
+*file: CursorBehaviour.cs 
 *Members: Juniper Watson, Andrew Sanford
 *class: CS 4700 – Game Development 
 *assignment: program 4
