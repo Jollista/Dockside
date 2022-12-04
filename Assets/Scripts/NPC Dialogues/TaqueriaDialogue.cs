@@ -1,3 +1,14 @@
+/*** 
+*file: TaqueriaDialogue.cs 
+*Members: Juniper Watson, Andrew Sanford
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 12/3/2022 
+* 
+*purpose: This script manages which set of the Taqueria lady's dialogue will be shown based on 
+*what conditions the player has met.
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
