@@ -21,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject sellButton;
     public GameObject festivalTransition;
 
+    public AudioSource dialogueBoxClose;
+    public AudioSource dialogueBoxOpen;
+
     public Animator animator; //reference to animator to handle dialogue box animation
     public Animator animatorSell; //reference to animator to handle sell menu animation
 
@@ -41,6 +44,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        dialogueBoxOpen.Play();
         //turn off player movement when dialogue starts
         player.canMove = false;
         //animate DialogueBox_Open, pulls dialogue box onto screen
@@ -130,6 +134,7 @@ public class DialogueManager : MonoBehaviour
     //Pulls dialogue box off of screen
     private void EndDialogue()
     {
+        dialogueBoxClose.Play();
         //animate DialogueBox_Close
         animator.SetBool("IsOpen", false);
         //disable dialogue sell button
