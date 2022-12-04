@@ -1,3 +1,13 @@
+/*** 
+*file: NPCDialogue.cs 
+*Members: Juniper Watson
+*class: CS 4700 – Game Development 
+*assignment: program 4
+*date last modified: 11/20/2022 
+* 
+*purpose: This script is a template for NPC dialogue 
+* 
+**/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
