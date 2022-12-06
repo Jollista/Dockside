@@ -1,6 +1,6 @@
 /*** 
 *file: SceneManagerScript.cs 
-*Members: Juniper Watson, Andrew Sanford
+*Members: Juniper Watson, Andrew Sanford, Neil Patrick Reyes
 *class: CS 4700 – Game Development 
 *assignment: program 4
 *date last modified: 11/30/2022 

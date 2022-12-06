@@ -1,6 +1,6 @@
 /*** 
 *file: FishingarrowController.cs 
-*Members: Juniper Watson, Andrew Sanford
+*Members: Juniper Watson, Andrew Sanford, Madison Sarmiento
 *class: CS 4700 – Game Development 
 *assignment: program 4
 *date last modified: 12/3/2022 
