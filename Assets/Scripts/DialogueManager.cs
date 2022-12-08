@@ -55,6 +55,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        //checks if game is complete on dialogue start since sell isn't accessible after game complete
+        if (gameManager.gameComplete)
+        {
+            festivalTransition.SetActive(true);
+        }
+
         dialogueBoxOpen.Play();
         //turn off player movement when dialogue starts
         player.canMove = false;
@@ -194,6 +200,7 @@ public class DialogueManager : MonoBehaviour
     {
         animatorSell.SetBool("IsOpen", false);
 
+        //checks if game is complete on close sell screen for player convenience
         if (gameManager.gameComplete)
         {
             festivalTransition.SetActive(true);

@@ -51,5 +51,12 @@ public class ManagerScript : MonoBehaviour
         {
             gameComplete = true;
         }
+
+        //quit if player holds down left shift and q
+        if (Input.GetKey("q") && Input.GetKey("left shift"))
+        {
+            Application.Quit();
+            //UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
 }
